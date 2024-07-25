@@ -23,7 +23,7 @@ class _FlutterToastState extends State<FlutterToast> {
           onPressed: () {
             Fluttertoast.showToast(
               msg: 'flutter toast',
-              backgroundColor: Colors.grey,
+              backgroundColor: Colors.black,fontSize: 18
             );
           },
           child: Container(
