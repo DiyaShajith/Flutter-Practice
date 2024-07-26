@@ -13,7 +13,7 @@ class _ListviewBuilderexState extends State<ListviewBuilderex> {
     Icons.chair_alt_outlined,
     Icons.chair_outlined,
   ];
-  List titles = ["Bed", "chair", "Sofa"];
+  List titles = ["Bed", "Chair", "Sofa"];
   List subtitle = ["King Size Bed", "King Size Chair", "Sofa Cum Bed"];
   List colors=[Color(0XFF69B7F9),Color(0XFF01C7BE),Color(0XFF93AAD6)];
 

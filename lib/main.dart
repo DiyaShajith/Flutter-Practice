@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'Fluttertoast.dart';
 import 'listview_types/listview_builder.dart';
 import 'listview_types/listviewseparator.dart';
+import 'listviewex/foodmenu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.deepPurple, brightness: Brightness.light),
           useMaterial3: true),
-      home: Lisstviewseparatorex(),
+      home: Foodmenu(),
     );
   }
 }
