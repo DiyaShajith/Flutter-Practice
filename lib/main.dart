@@ -1,4 +1,5 @@
 import 'package:basic_widgets/Task%20ui/project.dart';
+import 'package:basic_widgets/url_launcher/urlview.dart';
 import 'package:flutter/material.dart';
 
 import 'Fluttertoast.dart';
@@ -21,9 +22,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
-              seedColor: Colors.deepPurple, brightness: Brightness.light),
+              seedColor: Colors.deepPurple, brightness: Brightness.dark),
           useMaterial3: true),
-      home: Foodmenu(),
+      home: Urlview(),
     );
   }
 }
