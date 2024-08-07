@@ -26,7 +26,7 @@ class _FoodmenuState extends State<Foodmenu> {
     final size = MediaQuery.sizeOf(context);
     return Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             "FoodCart",
             style: TextStyle(
                 color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
@@ -34,10 +34,10 @@ class _FoodmenuState extends State<Foodmenu> {
         ),
         body: ListView.builder(
           itemCount: images.length,
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           itemBuilder: (context, index) => Stack(
             children: [
-              Container(
+              SizedBox(
                 width: double.infinity,
                 height: size.height * 0.25,
               ),
@@ -46,7 +46,7 @@ class _FoodmenuState extends State<Foodmenu> {
                 left: 10,
                 right: 10,
                 child: Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   width: size.width * 0.8,
                   height: size.height * 0.18,
                   decoration: BoxDecoration(
@@ -54,7 +54,7 @@ class _FoodmenuState extends State<Foodmenu> {
                       border: Border.all(width: 2, color: Colors.black)),
                   child: Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 120,
                       ),
                       Column(
@@ -63,26 +63,26 @@ class _FoodmenuState extends State<Foodmenu> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                VerticalDivider(
+                                const VerticalDivider(
                                   color: Colors.orange,
                                   thickness: 3,
                                 ),
                                 Text(
                                   names[index],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.orange,
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 70,
                                 ),
-                                Icon(
+                                const Icon(
                                   Icons.share,
                                   color: Colors.blueGrey,
                                   size: 30,
                                 ),
-                                Icon(
+                                const Icon(
                                   Icons.add_circle_outline_sharp,
                                   color: Colors.orange,
                                   size: 30,
@@ -93,13 +93,13 @@ class _FoodmenuState extends State<Foodmenu> {
                           SizedBox(width: 210,
                             child: Text(
                               title[index],
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 25),maxLines: 2,overflow: TextOverflow.ellipsis,
                             ),
                           ),
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Icon(

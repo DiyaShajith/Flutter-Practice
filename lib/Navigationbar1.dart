@@ -17,10 +17,10 @@ class Navigation1 extends StatefulWidget {
 class _Navigation1State extends State<Navigation1> {
   int currentIndex = 0;
   final pages = [
-    Greenhublogin(),
-    Greenhub(),
-    Masterclass(),
-    Masterclass1(),
+    const Greenhublogin(),
+    const Greenhub(),
+    const Masterclass(),
+    const Masterclass1(),
     const Registrationform()
   ];
   @override

@@ -164,7 +164,7 @@ class _Masterclass1State extends State<Masterclass1> {
                               backgroundColor:
                                   WidgetStateProperty.all(Colors.pinkAccent)),
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Masterclass()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const Masterclass()));
                           },
                           child: const Text(
                             "Free",

@@ -15,7 +15,7 @@ class _UrlviewState extends State<Urlview> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Portfolio",
           style: TextStyle(
             color: Colors.white,
@@ -28,7 +28,7 @@ class _UrlviewState extends State<Urlview> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircleAvatar(
@@ -37,23 +37,23 @@ class _UrlviewState extends State<Urlview> {
                 ),
               ],
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               "DIYA SHAJITH K",
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 25),
             ),
-            Text(
+            const Text(
               "Flutter Developer | Mobile App Enthusiast",
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
                   fontSize: 20),
             ),
-            SizedBox(height: 10),
-            Container(
+            const SizedBox(height: 10),
+            SizedBox(
               width: size.width * 0.9,
               height: size.height * 0.15,
               child: Text(
@@ -62,7 +62,7 @@ class _UrlviewState extends State<Urlview> {
                     color: Colors.white.withOpacity(.6), fontSize: 18),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Card(
               color: Colors.deepPurple
                   .withOpacity(0.1), // Optional: Add a background color
@@ -71,8 +71,8 @@ class _UrlviewState extends State<Urlview> {
                 height: size.height * 0.15,
                 decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(15)),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -118,7 +118,7 @@ class _UrlviewState extends State<Urlview> {
                 ),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Card(
               color: Colors.deepPurple
                   .withOpacity(0.1), // Optional: Add a background color
@@ -132,25 +132,38 @@ class _UrlviewState extends State<Urlview> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Get in Touch",
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
                             fontSize: 22),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                    "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png"),
+                          InkWell(
+                            onTap: () async {
+                              const phonenumber = "+919567403045";
+                              final url =
+                                  Uri.parse("https://wa.me/$phonenumber");
+
+                              if (await canLaunchUrl(url)) {
+                                await launchUrl(url);
+                              } else {
+                                throw Exception("could not launch$url");
+                              }
+                            },
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/479px-WhatsApp_icon.png"),
+                                ),
                               ),
                             ),
                           ),
@@ -168,7 +181,7 @@ class _UrlviewState extends State<Urlview> {
                             child: Container(
                               width: 40,
                               height: 40,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
                                   image: NetworkImage(
@@ -177,19 +190,21 @@ class _UrlviewState extends State<Urlview> {
                               ),
                             ),
                           ),
-                          InkWell(onTap: ()async{
-                            const url="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox";
-                            if(await canLaunchUrl(Uri.parse(url))){
-                              await launchUrl(Uri.parse(url));
-                            }else{
-                              print("could not launch");
-                              throw "could not launch$url";
-                            }
-                          },
+                          InkWell(
+                            onTap: () async {
+                              const url =
+                                  "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox";
+                              if (await canLaunchUrl(Uri.parse(url))) {
+                                await launchUrl(Uri.parse(url));
+                              } else {
+                                print("could not launch");
+                                throw "could not launch$url";
+                              }
+                            },
                             child: Container(
                               width: 40,
                               height: 40,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
                                   image: NetworkImage(
@@ -198,19 +213,20 @@ class _UrlviewState extends State<Urlview> {
                               ),
                             ),
                           ),
-                          InkWell(onTap: ()async{
-                            const url="https://github.com/DiyaShajith";
-                            if(await canLaunchUrl(Uri.parse(url))){
-                              await launchUrl(Uri.parse(url));
-                            }else{
-                              print("could not launch");
-                              throw "could not launch$url";
-                            }
-                          },
+                          InkWell(
+                            onTap: () async {
+                              const url = "https://github.com/DiyaShajith";
+                              if (await canLaunchUrl(Uri.parse(url))) {
+                                await launchUrl(Uri.parse(url));
+                              } else {
+                                print("could not launch");
+                                throw "could not launch$url";
+                              }
+                            },
                             child: Container(
                               width: 40,
                               height: 40,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
                                   image: NetworkImage(
@@ -219,14 +235,26 @@ class _UrlviewState extends State<Urlview> {
                               ),
                             ),
                           ),
-                          Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                    "https://cdn-icons-png.flaticon.com/256/455/455705.png"),
+                          InkWell(
+                            onTap: () async {
+                              String telephoneNumber = "+91 9995239669";
+                              String telephoneUrl = "tel:$telephoneNumber";
+                              if (await canLaunchUrl(Uri.parse(telephoneUrl))) {
+                                await launchUrl(Uri.parse(telephoneUrl));
+                              } else {
+                                print("could not launch");
+                                throw "could not launch $telephoneUrl";
+                              }
+                            },
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                      "https://cdn-icons-png.flaticon.com/256/455/455705.png"),
+                                ),
                               ),
                             ),
                           ),

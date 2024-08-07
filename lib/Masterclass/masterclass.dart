@@ -145,7 +145,7 @@ class _MasterclassState extends State<Masterclass> {
                                           WidgetStateProperty.all(
                                               Colors.grey[400])),
                                   onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Masterclass1()));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const Masterclass1()));
                                   },
                                   child: const Text(
                                     "NEW CLASS",

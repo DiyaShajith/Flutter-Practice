@@ -15,7 +15,7 @@ class _LisstviewseparatorexState extends State<Lisstviewseparatorex> {
   ];
   List titles = ["Bed", "Chair", "Sofa"];
   List subtitle = ["King Size Bed", "King Size Chair", "Sofa Cum Bed"];
-  List colors=[Color(0XFF69B7F9),Color(0XFF01C7BE),Color(0XFF93AAD6)];
+  List colors=[const Color(0XFF69B7F9),const Color(0XFF01C7BE),const Color(0XFF93AAD6)];
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +27,13 @@ class _LisstviewseparatorexState extends State<Lisstviewseparatorex> {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.all(5),
+                padding: const EdgeInsets.all(5),
                 width: size.width * 0.95,
                 height: size.height * .28,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: Colors.black, width: 2)),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
@@ -72,14 +72,14 @@ class _LisstviewseparatorexState extends State<Lisstviewseparatorex> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              ListView.separated(separatorBuilder: (context, index) => SizedBox(height: 10,),
+              ListView.separated(separatorBuilder: (context, index) => const SizedBox(height: 10,),
                 itemCount: icons.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) => Container(
-                  padding: EdgeInsets.all(5),
+                  padding: const EdgeInsets.all(5),
                   height: size.height * 0.1,
                   width: size.width * 0.9,
                   decoration: BoxDecoration(
@@ -92,7 +92,7 @@ class _LisstviewseparatorexState extends State<Lisstviewseparatorex> {
                         icons[index],
                         size: 50,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
                       Column(
@@ -100,7 +100,7 @@ class _LisstviewseparatorexState extends State<Lisstviewseparatorex> {
                         children: [
                           Text(
                             titles[index],
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 30),
@@ -114,8 +114,8 @@ class _LisstviewseparatorexState extends State<Lisstviewseparatorex> {
                           ),
                         ],
                       ),
-                      Spacer(),
-                      Icon(
+                      const Spacer(),
+                      const Icon(
                         Icons.delete_outline,
                         size: 45,
                       )
