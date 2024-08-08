@@ -2,6 +2,7 @@ import 'package:basic_widgets/animation/animatedcontainer.dart';
 import 'package:basic_widgets/animation/animationview.dart';
 import 'package:basic_widgets/animation/implictanimation.dart';
 import 'package:basic_widgets/animation/textanimated.dart';
+import 'package:basic_widgets/tabbar/tabbar.dart';
 import 'package:basic_widgets/testmarquee/testmarquee.dart';
 import 'package:basic_widgets/url_launcher/urlview.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.deepPurple, brightness: Brightness.dark),
           useMaterial3: true),
-      home: const Testmarquee(),
+      home: const Tabbar(),
     );
   }
 }
