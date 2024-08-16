@@ -5,6 +5,7 @@ import 'package:basic_widgets/animation/textanimated.dart';
 import 'package:basic_widgets/bottomsheetui.dart';
 import 'package:basic_widgets/counter_sharedpref.dart';
 import 'package:basic_widgets/counterapp.dart';
+import 'package:basic_widgets/profilepage.dart';
 import 'package:basic_widgets/sharedpreference/share_preference.dart';
 import 'package:basic_widgets/tabbar/tabbar.dart';
 import 'package:basic_widgets/tabbar/tabbarpage.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.deepPurple, brightness: Brightness.dark),
           useMaterial3: true),
-      home: const ValidationSharedpref(),
+      home: const Profilepage(),
     );
   }
 }
