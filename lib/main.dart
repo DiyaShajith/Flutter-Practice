@@ -1,3 +1,4 @@
+import 'package:basic_widgets/counter_provider.dart';
 import 'package:basic_widgets/todo_app';
 import 'package:basic_widgets/todo_list.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.deepPurple, brightness: Brightness.dark),
           useMaterial3: true),
-      home:  TodoListScreen(),
+      home:  CounterProvider(),
     );
   }
 }
