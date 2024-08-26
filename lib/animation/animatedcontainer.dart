@@ -15,7 +15,7 @@ class _AnimatedcontainerState extends State<Animatedcontainer> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Animated Container",
           style: TextStyle(
               color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
@@ -29,7 +29,7 @@ class _AnimatedcontainerState extends State<Animatedcontainer> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 AnimatedContainer(
-                  duration: Duration(
+                  duration: const Duration(
                     milliseconds: 600,
                   ),
                   height: size.height * 0.2,
@@ -40,7 +40,7 @@ class _AnimatedcontainerState extends State<Animatedcontainer> {
                   ),
                 ),
                 AnimatedContainer(
-                  duration: Duration(
+                  duration: const Duration(
                     milliseconds: 600,
                   ),
                   height: size.height * 0.2,
@@ -51,7 +51,7 @@ class _AnimatedcontainerState extends State<Animatedcontainer> {
                   ),
                 ),
                 AnimatedContainer(
-                  duration: Duration(
+                  duration: const Duration(
                     milliseconds: 600,
                   ),
                   height: size.height * 0.2,
@@ -63,7 +63,7 @@ class _AnimatedcontainerState extends State<Animatedcontainer> {
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             SizedBox(
               width: size.width * 0.5,
               height: 50,

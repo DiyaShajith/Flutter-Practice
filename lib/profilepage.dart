@@ -1,4 +1,3 @@
-import 'package:basic_widgets/sharedpreference/share_preference.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -34,6 +33,7 @@ class _ProfilepageState extends State<Profilepage> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

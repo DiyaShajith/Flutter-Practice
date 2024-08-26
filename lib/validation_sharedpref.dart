@@ -28,14 +28,14 @@ class _ValidationSharedprefState extends State<ValidationSharedpref> {
             style: TextStyle(
                 color: Colors.white, fontSize: 18, fontWeight: FontWeight.w500),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           TextField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 labelText: "Enter Your Email",
                 border: OutlineInputBorder(borderSide: BorderSide(width: 2)),
-                prefixIcon: const Icon(
+                prefixIcon: Icon(
                   Icons.email,
                   color: Colors.white,
                 )),
@@ -122,7 +122,7 @@ class _ValidationSharedprefState extends State<ValidationSharedpref> {
                                   onPressed: () {
                                     Navigator.of(context).pop();
                                   },
-                                  child: Text("OK"))
+                                  child: const Text("OK"))
                             ],
                           );
                         });

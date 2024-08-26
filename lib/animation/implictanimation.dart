@@ -12,13 +12,13 @@ class _ImplictanimationState extends State<Implictanimation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Implicit Animation",
           style: TextStyle(
               color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
         ),
       ),
-      body: Column(
+      body: const Column(
         children: [
           FadeInImage(
               fadeInDuration: Duration(milliseconds: 1800),

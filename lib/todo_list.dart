@@ -8,6 +8,7 @@ class TodoList extends StatefulWidget {
 }
 
 class _TodoListState extends State<TodoList> {
+  List task = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,32 +65,29 @@ class _TodoListState extends State<TodoList> {
           const SizedBox(
             height: 10,
           ),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "#",
-                style: TextStyle(
-                  fontSize: 20,
+          const Padding(
+            padding: EdgeInsets.all(16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Task Name",
+                  style: TextStyle(fontSize: 20),
                 ),
-              ),
-              Text(
-                "Task Name",
-                style: TextStyle(fontSize: 20),
-              ),
-              Text(
-                "Status",
-                style: TextStyle(fontSize: 20),
-              ),
-              Text(
-                "Edit",
-                style: TextStyle(fontSize: 20),
-              ),
-              Text(
-                "Remove",
-                style: TextStyle(fontSize: 20),
-              ),
-            ],
+                Text(
+                  "Status",
+                  style: TextStyle(fontSize: 20),
+                ),
+                Text(
+                  "Edit",
+                  style: TextStyle(fontSize: 20),
+                ),
+                Text(
+                  "Remove",
+                  style: TextStyle(fontSize: 20),
+                ),
+              ],
+            ),
           ),
           const SizedBox(
             height: 10,
@@ -97,66 +95,79 @@ class _TodoListState extends State<TodoList> {
           const Divider(
             color: Colors.white,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                "22",
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-              const Text(
-                "Buy Grocery",
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-              OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5),
+          ListView.builder(
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              if (task.isEmpty) {
+                return const Center(
+                  child: Text(
+                    "Task not Found",
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                );
+              } else {
+                return Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          "Buy Grocery",
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                        OutlinedButton(
+                            style: OutlinedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              side: const BorderSide(color: Colors.orange),
+                            ),
+                            onPressed: () {},
+                            child: const Text(
+                              "ToDo",
+                              style: TextStyle(
+                                  color: Colors.orange,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500),
+                            )),
+                        OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            side: const BorderSide(color: Colors.blue),
+                          ),
+                          onPressed: () {},
+                          child: const Icon(
+                            Icons.edit,
+                            color: Colors.blue,
+                          ),
+                        ),
+                        OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            side: const BorderSide(color: Colors.grey),
+                          ),
+                          onPressed: () {},
+                          child: const Icon(
+                            Icons.delete,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
                     ),
-                    side: const BorderSide(color: Colors.orange),
                   ),
-                  onPressed: () {},
-                  child: const Text(
-                    "ToDo",
-                    style: TextStyle(
-                        color: Colors.orange,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500),
-                  )),
-              OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  side: const BorderSide(color: Colors.blue),
-                ),
-                onPressed: () {},
-                child: Icon(
-                  Icons.edit,
-                  color: Colors.blue,
-                ),
-              ),
-              OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  side: const BorderSide(color: Colors.grey),
-                ),
-                onPressed: () {},
-                child: Icon(
-                  Icons.delete,
-                  color: Colors.grey,
-                ),
-              ),
-            ],
+                );
+              }
+            },
           )
         ],
       ),
