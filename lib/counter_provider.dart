@@ -1,22 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CounterProvider extends StatelessWidget {
   const CounterProvider({super.key});
 
   @override
   Widget build(BuildContext context) {
+    print("build");
+    final countpro = Provider.of<CountProvider>(context,listen: false);
     return Scaffold(
       appBar: AppBar(
         title: const Text("Counter"),
       ),
-      body: const Center(
-        child: Text(
-          "count",
-          style: TextStyle(fontSize: 30),
-        ),
+      body: Center(
+        child: Consumer<CountProvider>(builder: (context, counter, child) => Text(
+         counter.countval.toString(),
+          style: const TextStyle(fontSize: 30),
+        ),)
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          countpro.increment();
+        },
         child: const Icon(Icons.add),
       ),
     );
