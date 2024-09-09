@@ -1,4 +1,6 @@
+import 'package:basic_widgets/api_calling/catapi.dart';
 import 'package:basic_widgets/api_calling/dog_api.dart';
+import 'package:basic_widgets/api_calling/reqrs.dart';
 import 'package:basic_widgets/counter_provider.dart';
 
 import 'package:flutter/material.dart';
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(
                 seedColor: Colors.deepPurple, brightness: Brightness.dark),
             useMaterial3: true),
-        home: const Dogapi(),
+        home: const Reqres(),
       ),
     );
   }
