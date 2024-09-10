@@ -1,5 +1,6 @@
 import 'package:basic_widgets/api_calling/catapi.dart';
 import 'package:basic_widgets/api_calling/dog_api.dart';
+import 'package:basic_widgets/api_calling/register_api.dart';
 import 'package:basic_widgets/api_calling/news_api.dart';
 import 'package:basic_widgets/api_calling/reqrs.dart';
 import 'package:basic_widgets/counter_provider.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(
                 seedColor: Colors.deepPurple, brightness: Brightness.dark),
             useMaterial3: true),
-        home: const NewsApi(),
+        home: Registerapi(),
       ),
     );
   }
