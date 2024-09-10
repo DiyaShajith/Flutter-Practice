@@ -28,7 +28,7 @@ class _NewsApiState extends State<NewsApi> {
         ),
       ),
       body: ListView.builder(
-        itemCount: 30,
+        itemCount: newslist.length,
         shrinkWrap: true,
         itemBuilder: (context, index) => Card(
           child: Card(
@@ -40,36 +40,38 @@ class _NewsApiState extends State<NewsApi> {
               child: Column(
                 children: [
                   Text(
-                    newslist[index]["author"],
+                    newslist[index]["author"] ?? '',
                     style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
                         fontSize: 25),
                   ),
                   Text(
-                    newslist[index]["title"],
+                    newslist[index]["title"] ?? '',
                     style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
                         fontSize: 20),
                   ),
                   Text(
-                    newslist[index]["description"],
+                    newslist[index]["description"] ?? '',
                     style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
                         fontSize: 18),
                   ),
-                  Image(image: NetworkImage(newslist[index]["urlToImage"])),
+                  Image(
+                      image: NetworkImage(newslist[index]["urlToImage"] ??
+                          'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png')),
                   Text(
-                    newslist[index]["publishedAt"],
+                    newslist[index]["publishedAt"] ?? '',
                     style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
                         fontSize: 18),
                   ),
                   Text(
-                    newslist[index]["content"],
+                    newslist[index]["content"] ?? '',
                     style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
@@ -87,9 +89,11 @@ class _NewsApiState extends State<NewsApi> {
   Future newsapi() async {
     try {
       final response = await http.get(Uri.parse(
-          "https://newsapi.org/v2/everything?q=tesla&from=2024-08-09&sortBy=publishedAt&apiKey=9c2645546fe5483a8a786a1fccfbf55c"));
+          "https://newsapi.org/v2/everything?q=tesla&from=2024-08-10&sortBy=publishedAt&apiKey=9c2645546fe5483a8a786a1fccfbf55c"));
       if (response.statusCode == 200) {
-        newslist = jsonDecode(response.body)["articles"];
+        setState(() {
+          newslist = jsonDecode(response.body)["articles"];
+        });
       }
     } catch (e) {
       print(e.toString());
